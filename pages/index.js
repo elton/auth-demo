@@ -15,14 +15,16 @@ export default function Home() {
         </>
       )}
       {session && (
-        <>
-          Signed in as {session.user.name}
-          <br />
+        <div className='w-2/3 mx-auto my-5 flex-col items-center'>
+          <div>Signed in as {session.user.name}</div>
+
           {session.user.image && (
-            <img src={session.user.image} className='rounded-full' />
+            <div>
+              <img src={session.user.image} className='rounded-full' />
+            </div>
           )}
           <button onClick={() => signOut()}>Sign out</button>
-        </>
+        </div>
       )}
     </>
   );
