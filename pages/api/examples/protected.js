@@ -9,7 +9,8 @@ const protectedPage = async (req, res) => {
     });
   } else {
     res.send({
-      error: 'You must be sign in to view the protected content on this page.',
+      content:
+        'You must be sign in to view the protected content on this page.',
     });
   }
 };

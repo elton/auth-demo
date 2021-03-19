@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/client';
+import { useSession, signIn } from 'next-auth/client';
 import Layout from '../components/Layout';
 const Protected = () => {
   const [session, loading] = useSession();
@@ -8,7 +8,7 @@ const Protected = () => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch('api/examples/protected');
-      const data = res.json();
+      const data = await res.json();
       if (data.content) {
         setContent(data.content);
       }
@@ -22,7 +22,17 @@ const Protected = () => {
   if (!session) {
     return (
       <Layout>
-        <div>Access Denied!!</div>
+        <h1 className='text-3xl font-semibold mb-5'>Access Denied!!</h1>
+        <p>{content}</p>
+        <a
+          href='/api/auth/signin'
+          onClick={(e) => {
+            e.preventDefault();
+            signIn();
+          }}
+          className='underline'>
+          Signed in now.
+        </a>
       </Layout>
     );
   }
@@ -30,10 +40,8 @@ const Protected = () => {
   // If session exists, display content
   return (
     <Layout>
-      <h1>Protected Page</h1>
-      <p>
-        <strong>{content || '\u00a0'}</strong>
-      </p>
+      <h1 className='text-3xl font-semibold mb-5'>Protected Page</h1>
+      <p>{content || '\u00a0'}</p>
     </Layout>
   );
 };
