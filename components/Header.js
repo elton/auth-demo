@@ -11,7 +11,7 @@ const Header = () => {
       </Head>
       <header>
         <div className='mb-4'>
-          <p className='relative top-0 overflow-hidden rounded-b-lg bg-gray-100 text-gray-700'>
+          <div className='relative top-0 overflow-hidden rounded-b-lg bg-gray-200 text-gray-700'>
             {!session && (
               <div className='h-14 flex justify-between items-center p-2'>
                 <span className=''>You are not signed in.</span>
@@ -32,7 +32,7 @@ const Header = () => {
                   {session.user.image && (
                     <img
                       src={session.user.image}
-                      className='rounded-full h-11 w-11'
+                      className='rounded-full h-11 w-11 border-gray-50 border-4'
                     />
                   )}
                   <span className='ml-2'>
@@ -53,9 +53,23 @@ const Header = () => {
                 </a>
               </div>
             )}
-          </p>
+          </div>
         </div>
       </header>
+      <nav>
+        <ul className='mb-8 flex'>
+          <li className='mr-4'>
+            <Link href='/'>
+              <a className='underline hover:text-lightBlue-800'>Home</a>
+            </Link>
+          </li>
+          <li className='mr-4'>
+            <Link href='/protected'>
+              <a className='underline hover:text-lightBlue-800'>Protected</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };
