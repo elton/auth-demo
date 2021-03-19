@@ -9,7 +9,7 @@ const Header = () => {
       <Head>
         <title>Auth Demo</title>
       </Head>
-      <header>
+      <header className='max-w-3xl mx-auto'>
         <div className='mb-4'>
           <div className='relative top-0 overflow-hidden rounded-b-lg bg-gray-200 text-gray-700'>
             {!session && (
@@ -19,7 +19,7 @@ const Header = () => {
                   href={`/api/auth/sign`}
                   onClick={(e) => {
                     e.preventDefault();
-                    signIn();
+                    signIn('google');
                   }}
                   className='bg-lightBlue-600 py-2 px-6 text-white rounded font-bold hover:shadow-inner'>
                   Sign in
@@ -56,7 +56,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <nav>
+      <nav className='max-w-3xl mx-auto'>
         <ul className='mb-8 flex'>
           <li className='mr-4'>
             <Link href='/'>
