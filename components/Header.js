@@ -11,7 +11,7 @@ const Header = () => {
       </Head>
       <header className='max-w-3xl mx-auto'>
         <div className='mb-4'>
-          <div className='relative top-0 overflow-hidden rounded-b-lg bg-gray-200 dark:bg-gray-600 text-gray-300'>
+          <div className='relative top-0 overflow-hidden rounded-b-lg bg-gray-200 dark:bg-gray-600 dark:text-gray-300'>
             {!session && (
               <div className='h-14 flex justify-between items-center p-2'>
                 <span className=''>You are not signed in.</span>
