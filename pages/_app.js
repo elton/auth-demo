@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import { Provider } from 'next-auth/client';
-import { Fragment } from 'react';
 
 function MyApp({ Component, pageProps }) {
   return (

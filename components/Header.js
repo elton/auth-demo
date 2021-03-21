@@ -11,7 +11,7 @@ const Header = () => {
       </Head>
       <header className='max-w-3xl mx-auto'>
         <div className='mb-4'>
-          <div className='relative top-0 overflow-hidden rounded-b-lg bg-gray-200 text-gray-700'>
+          <div className='relative top-0 overflow-hidden rounded-b-lg bg-gray-200 dark:bg-gray-600 text-gray-300'>
             {!session && (
               <div className='h-14 flex justify-between items-center p-2'>
                 <span className=''>You are not signed in.</span>
@@ -21,7 +21,7 @@ const Header = () => {
                     e.preventDefault();
                     signIn('google');
                   }}
-                  className='bg-lightBlue-600 py-2 px-6 text-white rounded font-bold hover:shadow-inner'>
+                  className='bg-lightBlue-600 dark:bg-lightBlue-900 py-2 px-6 text-white dark:text-gray-300 rounded font-bold hover:shadow-inner'>
                   Sign in
                 </a>
               </div>
@@ -56,7 +56,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <nav className='max-w-3xl mx-auto'>
+      <nav className='max-w-3xl mx-auto dark:text-gray-300'>
         <ul className='mb-8 flex'>
           <li className='mr-4'>
             <Link href='/'>

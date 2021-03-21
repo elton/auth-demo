@@ -22,15 +22,17 @@ const Protected = () => {
   if (!session) {
     return (
       <Layout>
-        <h1 className='text-3xl font-semibold mb-5'>Access Denied!!</h1>
-        <p>{content}</p>
+        <h1 className='text-3xl font-semibold mb-5 dark:text-gray-200'>
+          Access Denied!!
+        </h1>
+        <p className='dark:text-gray-300'>{content}</p>
         <a
           href='/api/auth/signin'
           onClick={(e) => {
             e.preventDefault();
-            signIn();
+            signIn('google');
           }}
-          className='underline'>
+          className='underline dark:text-gray-300'>
           Signed in now.
         </a>
       </Layout>
@@ -40,8 +42,10 @@ const Protected = () => {
   // If session exists, display content
   return (
     <Layout>
-      <h1 className='text-3xl font-semibold mb-5'>Protected Page</h1>
-      <p>{content || '\u00a0'}</p>
+      <h1 className='text-3xl font-semibold mb-5 dark:text-gray-300'>
+        Protected Page
+      </h1>
+      <p className='dark:text-gray-300'>{content || '\u00a0'}</p>
     </Layout>
   );
 };
